@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="ITP 301 student home page">
+	<meta name="keywords" content="HTML,CSS,ITP 301, student page, Conner">
+	<meta name="author" content="Conner Kojima">
+	<meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+	<title>Conner Kojima | Student Page</title>
+	<style>
+	#row1{text-align: center;
+		  height: 120px;
+		  margin-top: 0px;
+		  margin-bottom: 0px;
+		  margin-left: 20px;
+		  padding-top: 0px;
+		  padding-bottom: 0px;
+		  padding-left: 20px;
+		  background-color: moccasin;}
+	#row2{height: 200px;
+		  margin-top: 0px;
+		  margin-bottom: 0px;
+		  margin-left: 20px;
+		  padding-top: 0px;
+		  padding-bottom: 0px;
+		  padding-left: 20px;
+		  background-color: moccasin;}
+	#container {width: 900px;
+				margin: 0 auto;}
+	.left_column {width: 350px;
+				  margin-left: 20px;
+				  padding-left: 20px;
+				  float: left;}
+	.right_column {width: 350px;
+				   margin-left: 20px;
+				   padding-left: 20px;
+				   float: left;}
+	h3 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 10px;
+	}
+
+	a {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 10px;
+	}
+	h1 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 10px;
+	}
+	#button {
+		align-content: center;
+		width: 100px;
+		margin: 0 auto;
+		background-color: gray;
+		color: black;
+	}
+	.clear {clear:both;}
+	.centered {
+		align-content: center;
+		text-align: center;
+		margin: 0 auto;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id='row1'>
+		<h1>Conner Kojima</h1>
+	    <a href="mailto:cykojima@usc.edu">cykojima@usc.edu</a>
+		<button id=button>
+			<p>Favorite Color</p>
+		</button>
+	</div>
+	<div id="row2">
+		<div class="left_column">
+			<h3>Assignments</h3>
+			<div class=centered>
+			</div>
+		</div>
+		<div class="right_column">
+			<h3>Labs</h3>
+			<div class=centered>
+				<a href="index.html" target="_blank">Lab 1: Student Page</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<script>
+	document.querySelector('#button').onclick = function() {
+		document.querySelector('#row1').style.backgroundColor = '#87CEEB';
+		document.querySelector('#row2').style.backgroundColor = '#87CEEB';
+	}
+</script>
+</body>
+</html>
