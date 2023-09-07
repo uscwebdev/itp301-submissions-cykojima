@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="ITP 301 Shopping Cart with Funds">
+	<meta name="keywords" content="HTML,CSS,ITP 301, Conner">
+	<meta name="author" content="Conner Kojima">
+	<meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+	<title>Conner Kojima | Student Page</title>
+	<style>
+	#header{
+		text-align: center;
+		height: 120px;
+		width: 900px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 20px;
+		background-color: skyblue;}
+	#row2{
+		height: 350px;
+		width: 900px;
+		margin-left: 20px;
+		background-color: white;}
+	#row3{
+		height: 120px;
+		width: 900px;
+		margin-top: 0px;
+		margin-left: 20px;
+		background-color: skyblue;}
+	#footer{
+		height: 120px;
+		width: 870px;
+		margin-left: 20px;
+		padding-left: 30px;
+		padding-top: 20px;
+		background-color: grey;}
+	#container {
+		width: 900px;
+		margin: 0 auto;}
+	.item_column {
+		background-color: violet;
+		height: 300px;
+		width: 222px;
+		float: left;
+	}
+	h3 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 5px;
+	}
+	h1 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 30px;
+	}
+	.clear {clear:both;}
+	.food_card {
+		align-content: center;
+		text-align: center;
+		margin: 0 auto;
+		background-color: violet;
+		height: 300px;
+	}
+	.centered {
+		align-content: center;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.foods {
+		width: 220px;
+		height: 220px;
+		padding: 1px;
+	}
+	#items {
+		background-color: violet;
+		margin: 0 auto;
+		width: 890px;
+		padding: 5px;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	#subtotal {
+		margin: 0 auto;
+		width: 100%;
+		text-align: center;
+		padding-top: 30px;
+	}
+	#footer_txt {
+		padding: 0px;
+		margin: 0px;
+	}
+	.left_column {
+		width: 350px;
+		margin-left: 20px;
+		padding-left: 20px;
+		float: left;
+	}
+	.right_column {
+		width: 350px;
+		margin-left: 20px;
+		padding-left: 20px;
+		float: left;
+		flex-direction: row;
+	}
+	.fund_button {
+		align-content: center;
+		text-align: center;
+		margin: 0 auto;
+		float: left
+	}
+	#add_funds_box {
+		font-size: 22px;
+		width: 80px;
+	}
+	#fund_add {
+		background-color: gray;
+	}
+	#fund_money_sign {
+		background-color: gray;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id='header'>
+		<!-- header -->
+		<h1>Broke Da Mouf Shopping Cart</h1>
+	</div>
+	<div id="row2" class=centered>
+		<!-- row that shows all the food items -->
+		<div class=centered id=items>
+		<div class="item_column">
+			<!-- each food item will have a picture and associated price -->
+			<div class=food_card id=poke_card>
+				<img class='foods' id="poke" src="images/poke.png" alt="poke">
+				<h2>Poke: 15$</h2>
+			</div>
+		</div>
+		<div class="item_column">
+			<div class=food_card id=laulau_card>
+				<img class='foods' id="laulau" src="images/laulau.jpeg" alt="laulau">
+				<h2>Lau Lau: 13$</h2>
+			</div>
+		</div>
+		<div class="item_column">
+			<div class=food_card id=longrice_card>
+				<img class='foods' id="longrice" src="images/longrice.jpeg" alt="chicken long rice">
+				<h2>Chicken Long Rice: 14$</h2>
+			</div>
+		</div>
+		<div class="item_column">
+			<div class=food_card id=kaluapig_card>
+				<img class='foods' id="kaluapig" src="images/kaluapig.jpeg" alt="kalua pig">
+				<h2>Kalua Pig: 12$</h2>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	</div>
+	<div id="row3">
+		<!-- txt that stores value of how much food has been ordered -->
+		<div class="left_column">
+			<h2 id=subtotal>Cart Subtotal: $0</h2>
+		</div>
+		<div class="right_column">
+			<h2 id=Total Funds>Funds: $0</h2>
+			<div class=fund_button id=fund_money_sign>
+				<h3>$</h3>
+			</div>
+			<div class=fund_button>
+				<input type=text id=add_funds_box>
+			</div>
+			<div class=fund_button id=fund_add>
+				<h3>Add funds</h3>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div id="footer">
+		<!-- footer -->
+		<h2 id=footer_txt>by Conner Kojima</h2>
+	</div>
+</div>
+<script>
+
+	document.querySelector('#fund_add').onclick = function() {
+		var funds = document.querySelector('#add_funds_box').value;
+		funds = parseFloat(funds);
+
+		// Add float value to funds total
+		var total = parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) + funds;
+		// update subtotal html
+		document.querySelector('#Total').innerHTML = "Funds: $" + total;
+		document.querySelector('#add_funds_box').value = "";
+	}
+
+	/*
+		Workflow 
+		Detect user click on item card,
+		Save displayed USD value into a variable,
+		Convert the variable above into a float,
+		Access current price subtotal and convert to float,
+		Add item price float to current subtotal float,
+		Display calculated value in the appropriate tag.
+	
+	*/
+
+	// when poke card is pressed
+	document.querySelector('#poke_card').onclick = function() {
+
+			// access str in poke card
+			var usd_str = document.querySelector('#poke_card').innerHTML;
+			// split string
+			usd_str = usd_str.split(": ")[1]
+			// split string once more and store substring that contains number
+			usd = usd_str.split("$")[0]
+			// parse float from substring
+			usd = parseFloat(usd);
+
+			if (parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) > usd ) {
+				// add float value to current subtotal
+				var total = parseFloat(document.querySelector('#subtotal').innerHTML.split("$")[1]) + usd;
+				// update subtotal html
+				document.querySelector('#subtotal').innerHTML = "Cart Subtotal: $" + total;
+
+				// subtract float value from fuds
+				var total = parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) - usd;
+				// update subtotal html
+				document.querySelector('#Total').innerHTML = "Funds: $" + total;
+
+			} else {
+				alert("Insufficient funds")
+			}
+		
+		}
+	
+	// repeat for laulau card
+		document.querySelector('#laulau_card').onclick = function() {
+			var usd_str = document.querySelector('#laulau_card').innerHTML;;
+			// split string
+			usd_str = usd_str.split(": ")[1]
+			// split string once more and store substring that contains number
+			usd = usd_str.split("$")[0]
+			// parse float from substring
+			usd = parseFloat(usd);
+
+			if (parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) > usd ) {
+				// add float value to current subtotal
+				var total = parseFloat(document.querySelector('#subtotal').innerHTML.split("$")[1]) + usd;
+				// update subtotal html
+				document.querySelector('#subtotal').innerHTML = "Cart Subtotal: $" + total;
+
+				// subtract float value from fuds
+				var total = parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) - usd;
+				// update subtotal html
+				document.querySelector('#Total').innerHTML = "Funds: $" + total;
+
+			} else {
+				alert("Insufficient funds")
+			}
+		}
+	// repeat for longrice card
+		document.querySelector('#longrice_card').onclick = function() {
+			var usd_str = document.querySelector('#longrice_card').innerHTML;;
+			// split string
+			usd_str = usd_str.split(": ")[1]
+			// split string once more and store substring that contains number
+			usd = usd_str.split("$")[0]
+			// parse float from substring
+			usd = parseFloat(usd);
+
+			if (parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) > usd ) {
+				// add float value to current subtotal
+				var total = parseFloat(document.querySelector('#subtotal').innerHTML.split("$")[1]) + usd;
+				// update subtotal html
+				document.querySelector('#subtotal').innerHTML = "Cart Subtotal: $" + total;
+
+				// subtract float value from fuds
+				var total = parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) - usd;
+				// update subtotal html
+				document.querySelector('#Total').innerHTML = "Funds: $" + total;
+
+			} else {
+				alert("Insufficient funds")
+			}
+		}
+	// repeat for kaluapig card
+		document.querySelector('#kaluapig_card').onclick = function() {
+			var usd_str = document.querySelector('#longrice_card').innerHTML;;
+			// split string
+			usd_str = usd_str.split(": ")[1]
+			// split string once more and store substring that contains number
+			usd = usd_str.split("$")[0]
+			// parse float from substring
+			usd = parseFloat(usd);
+
+			if (parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) > usd ) {
+				// add float value to current subtotal
+				var total = parseFloat(document.querySelector('#subtotal').innerHTML.split("$")[1]) + usd;
+				// update subtotal html
+				document.querySelector('#subtotal').innerHTML = "Cart Subtotal: $" + total;
+
+				// subtract float value from fuds
+				var total = parseFloat(document.querySelector('#Total').innerHTML.split("$")[1]) - usd;
+				// update subtotal html
+				document.querySelector('#Total').innerHTML = "Funds: $" + total;
+
+			} else {
+				alert("Insufficient funds")
+			}
+		}
+</script>
+</body>
+</html>
