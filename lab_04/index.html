@@ -1,0 +1,194 @@
+  <!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="ITP 301 student home page">
+	<meta name="keywords" content="HTML,CSS,ITP 301, student page, Conner">
+	<meta name="author" content="Conner Kojima">
+	<meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+	<title>Conner Kojima | Student Page</title>
+	<style>
+	#row1{
+		text-align: center;
+		height: 120px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 20px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 20px;
+		background-color: moccasin;}
+	#row2{
+		height: 200px;
+		margin-left: 20px;
+		background-color: moccasin;}
+	#row3{
+		height: 600px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 20px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 20px;
+		background-color: moccasin;}
+	#container {
+		width: 900px;
+		margin: 0 auto;}
+	.column1 {
+		background-color: blue;
+		width: 120px;
+		float: left;
+	}
+	.column2 {
+		background-color: green;
+		width: 120px;
+		float: left;
+	}
+	.column3 {
+		background-color: blue;
+		width: 120px;
+		float: left;
+	}
+	.column4 {
+		background-color: green;
+		width: 120px;
+		float: left;
+	}
+	.column5 {
+		background-color: blue;
+		width: 120px;
+		float: left;
+	}
+	h3 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 10px;
+	}
+
+	a {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 10px;
+	}
+	h1 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 30px;
+	}
+	#button {
+		align-content: center;
+		width: 100px;
+		margin: 0 auto;
+		background-color: gray;
+		color: black;
+	}
+	.clear {clear:both;}
+	.centered {
+		align-content: center;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.hobbies {
+		width: 110px;
+		height: 110px;
+		padding: 1px;
+	}
+	#main_image {
+		width: 480px;
+		height: 480px;
+		padding: 1px;
+	}
+	#test {
+		background-color: violet;
+		margin: 0 auto;
+		width: 600px;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id='row1'>
+		<h1>My Hobbies</h1>
+	</div>
+	<div id="row2" class=centered>
+		<div class=centered id=test>
+		<div class="column1">
+			<div class=centered>
+				<img class='hobbies' id="surfing" src="images/surf.jpeg" alt="surfing">
+			</div>
+		</div>
+		<div class="column2">
+			<div class=centered>
+				<img class='hobbies' id="cooking" src="images/cooking.jpeg" alt="cooking">
+			</div>
+		</div>
+		<div class="column3">
+			<div class=centered>
+				<img class='hobbies' id="hiking" src="images/hiking.jpeg" alt="hiking">
+			</div>
+		</div>
+		<div class="column4">
+			<div class=centered>
+				<img class='hobbies' id="spikeball" src="images/spikeball.jpeg" alt="spikeball">
+			</div>
+		</div>
+		<div class="column5">
+			<div class=centered>
+				<img class='hobbies' id="swimming" src="images/swimming.jpeg" alt="swimming">
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	</div>
+	<div id="row3">
+			<div class=centered>
+				<img id='main_image' src="images/surf.jpeg" alt="surf">
+				<h2 id='main_image_caption'>surfing</h2>
+			</div>
+	</div>
+</div>
+<script>
+	var thumbnails = document.querySelectorAll('.hobbies');
+
+	for (var i = 0; i < thumbnails.length; i++) {
+			console.log(i);
+			thumbnails[i].onclick = function(){
+				console.log('thumbnail clicked');
+				console.log(this);
+				console.log(this.src);
+
+				change_main_image(this)
+			}
+		}
+
+	function change_main_image(thumbnail) {
+		document.querySelector('#main_image').src=thumbnail.src;
+		document.querySelector('#main_image').alt=thumbnail.alt;
+		document.querySelector('#main_image_caption').innerHTML=thumbnail.alt;
+	}
+
+	// document.querySelector('#surfing').onclick = function() {
+	// 	document.querySelector('#main_image').src= 'images/surf.jpeg';
+	// 	document.querySelector('#main_image').alt= 'surfing';
+	// }
+	// document.querySelector('#spikeball').onclick = function() {
+	// 	document.querySelector('#main_image').src= 'images/spikeball.jpeg';
+	// 	document.querySelector('#main_image').alt= 'spikeball';
+	// }
+	// document.querySelector('#cooking').onclick = function() {
+	// 	document.querySelector('#main_image').src= 'images/cooking.jpeg';
+	// 	document.querySelector('#main_image').alt= 'cooking';
+	// }
+	// document.querySelector('#swimming').onclick = function() {
+	// 	document.querySelector('#main_image').src= 'images/swimming.jpeg';
+	// 	document.querySelector('#main_image').alt= 'swimming';
+	// }
+	// document.querySelector('#hiking').onclick = function() {
+	// 	document.querySelector('#main_image').src= 'images/hiking.jpeg';
+	// 	document.querySelector('#main_image').alt= 'hiking';
+	// }
+</script>
+</body>
+</html>
