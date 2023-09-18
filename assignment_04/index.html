@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="ITP 301 Liar's Dice">
+	<meta name="keywords" content="HTML,CSS,ITP 301, Conner">
+	<meta name="author" content="Conner Kojima">
+	<meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+	<title>Conner Kojima | Student Page</title>
+	<style>
+	#header{
+		text-align: center;
+		height: 120px;
+		width: 900px;
+		margin-top: 0px;
+		background-color: skyblue;}
+	#row2{
+		height: 70px;
+		width: 900px;
+		margin-left: 20px;
+		background-color: white;}
+	#row3{
+		height: 50px;
+		width: 900px;
+		padding-top: 10px;
+		background-color: skyblue;}
+	#footer{
+		height: 140px;
+		width: 900px;
+		background-color: skyblue;}
+	#container {
+		width: 900px;
+		margin: 0 auto;}
+	.item_column {
+		background-color: violet;
+		height: 300px;
+		width: 222px;
+		float: left;
+	}
+	h3 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 5px;
+	}
+	h1 {
+		margin: 0 auto;
+		align-content: center;
+		text-align: center;
+		padding: 30px;
+	}
+	.clear {clear:both;}
+	.dice, #results, #results_msg {
+		float: left;
+	}
+	.centered {
+		align-content: center;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.dice_img {
+		width: 90px;
+		height: 90px;
+		padding: 10px;
+	}
+	#dice_box {
+		padding-left: 120px
+	}
+	.guess_widget {
+		align-content: center;
+		text-align: center;
+		margin: 0 auto;
+		float: left
+	}
+	#guess_input {
+		font-size: 22px;
+		padding-left: 20px;
+		width: 80px;
+	}
+	#submit_button {
+		background-color: blue;
+		margin-left: 20px;
+	}
+	#your_guess_txt_box {
+		background-color: white;
+	}
+	#submit_box {
+		padding: 30px;
+		padding-left: 280px;
+	}
+	#small_rect {
+		width: 600px;
+	}
+	#results, #results_msg {
+		padding: 0;
+		margin: 0;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id='header'>
+		<!-- header -->
+		<h1>Conner's Liar's Dice</h1>
+	</div>
+	<div id="row2">
+		<div class=centered id=submit_box>
+		<!-- txt that stores value of how much food has been ordered -->
+		<div class=guess_widget id=your_guess_txt_box>
+			<h3>Your Guess</h3>
+		</div>
+		<div class=guess_widget>
+			<input type=text id=guess_input>
+		</div>
+		<div class=guess_widget id=submit_button>
+			<h3>Submit</h3>
+		</div>
+		<div class="clear"></div>
+	</div>
+	</div>
+	<div id="row3" class=centered>
+		<!-- row that shows all the food items -->
+		<div id=small_rect class=centered>
+		<h2 id=results>Results:</h2>
+		<h2 id=results_msg></h2>
+		<div class="clear"></div>
+	</div>
+	</div>
+	<div id="footer">
+		<!-- footer -->
+		<div class=centered id=dice_box>
+		<div class=dice id=dice_1>
+			<img class='dice_img' id="dice_1_img" src="images/1.png" alt="1 dice">
+		</div>
+		<div class=dice id=dice_2>
+			<img class='dice_img' id="dice_2_img" src="images/1.png" alt="1 dice">
+		</div>
+		<div class=dice id=dice_3>
+			<img class='dice_img' id="dice_3_img" src="images/1.png" alt="1 dice">
+		</div>
+		<div class=dice id=dice_4>
+			<img class='dice_img' id="dice_4_img" src="images/1.png" alt="1 dice">
+		</div>
+		<div class=dice id=dice_5>
+			<img class='dice_img' id="dice_5_img" src="images/1.png" alt="1 dice">
+		</div>
+		<div class=dice id=dice_6>
+			<img class='dice_img' id="dice_6_img" src="images/1.png" alt="1 dice">
+		</div>
+		<div class=clear></div>
+		</div>
+	</div>
+</div>
+<script>
+
+	// When Submit Button is pressed
+	document.querySelector('#submit_button').onclick = function() {
+		// intialize array
+		var dice_nums = [0, 0, 0, 0, 0, 0];
+
+		// assign random values to each dice
+		for (var i = 0; i < dice_nums.length; i++) {
+			dice_nums[i] = Math.floor(Math.random()*6 + 1);
+		}
+
+		// update dice to random values accordingly
+		dice = document.querySelectorAll('.dice_img');
+		for (var i = 0; i < dice.length; i++) {
+			update_dice(dice[i], dice_nums[i])
+		}
+
+		// parse guess
+		guess = parseInt(document.querySelector('#guess_input').value);
+
+		// check if guess is correct and show corresponding message
+		if (dice_nums.includes(guess)) {
+			document.querySelector('#results_msg').innerHTML = "You Guessed Correctly!";
+			document.querySelector('#results_msg').style.color = "green";
+		} else {
+			document.querySelector('#results_msg').innerHTML = "You Guessed Incorrectly.";
+			document.querySelector('#results_msg').style.color = "red";
+		}
+	}
+
+	// update dice image source and alt 
+	function update_dice(dice, dice_num) {
+		dice.src = "images/" + dice_num + ".png";
+		dice.alt = dice_num + " dice";
+	}
+</script>
+</body>
+</html>
