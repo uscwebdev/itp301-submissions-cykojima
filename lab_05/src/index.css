@@ -1,0 +1,22 @@
+img {
+  height: 200px;
+  width: auto;
+}
+body {
+  background-color: white;
+}
+
+#favorite_color {
+  width: 120px;
+  text-align: center;
+  background-color: aqua;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.list_item {
+  font-size: 16px;
+  padding: 5px;
+}
