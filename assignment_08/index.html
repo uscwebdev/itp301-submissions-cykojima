@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   		<link href="css/shared.css" rel="stylesheet" type="text/css">
+      <meta name="description" content="ITP 104 Final project about us page">
+      <meta name="keywords" content="HTML,CSS,ITP 104,final project about usConner">
+      <meta name="author" content="Conner Kojima">
+      <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+      <title>Conner Kojima - Final Project</title>
+      	<style>
+			/* Global styles */
+			.main-container {
+			width: 100%;
+			height: 100%;
+			background: white;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 1rem;
+			display: inline-flex;
+			}
+
+			/* Header styles */
+			.header {
+			align-self: stretch;
+			height: 180px;
+			padding-top: 70px;
+			padding-bottom: 105px;
+			padding-left: 280px;
+			padding-right: 280px;
+			background-color: #433E3E;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 1rem;
+			display: inline-flex;
+			}
+
+			.title {
+			color: white;
+			font-size: 80px;
+			font-family: Georgia, serif;
+			font-weight: 400;
+			word-wrap: break-word;
+			}
+
+			.subtitle {
+			color: white;
+			font-size: 40px;
+			font-family: Georgia, serif;
+			font-weight: 400;
+			word-wrap: break-word;
+			}
+
+			/* Section styles */
+			.section-title {
+			color: black;
+			font-size: 60px;
+			font-family: Georgia, serif;
+			font-weight: 400;
+			word-wrap: break-word;
+			padding-left: 50px;
+			}
+
+			.section-content {
+			width: 1323px;
+			height: 342px;
+			color: black;
+			font-size: 40px;
+			font-family: Georgia, serif;
+			font-weight: 400;
+			word-wrap: break-word;
+			padding-left: 50px;
+			}
+
+			/* Color palette styles */
+			.color {
+			width: 287px;
+			height: 287px;
+			background: white;
+			border: 1px solid black;
+			border-radius: 9999px;
+			margin: 10px;
+			display: inline-block;
+			}
+
+			/* Link styles in the "Website Inspiration" section */
+			.inspiration a {
+			color: black;
+			}
+
+			#topic {
+				align-self: stretch;
+				height: 240px;
+				padding-top: 66px;
+				padding-left: 82; 
+				padding-right: 107;
+				background-color: #BBE0E2; 
+				flex-direction: 'column';
+				display: 'inline-flex'
+			}
+
+			#audience {
+				align-self: stretch;
+				height: 280px;
+				padding-top: 66px;
+				padding-bottom: 55; 
+				padding-left: 82; 
+				padding-right: 107;
+				background-color: #BBE2CD; 
+				flex-direction: 'column';
+				display: 'inline-flex'
+			}
+
+			#design {
+				align-self: stretch;
+				height: 280px;
+				padding-top: 66px;
+				padding-bottom: 55; 
+				padding-left: 82; 
+				padding-right: 107;
+				background-color: #D8E2BB; 
+				flex-direction: 'column';
+				justify-content: 'flex-end';
+				align-items: 'flex-start';
+				gap: 59;
+				display: 'inline-flex'
+			}
+
+			#color-palette {
+				align-self: stretch;
+				height: 400px;
+				padding-top: 66px;
+				padding-bottom: 55; 
+				padding-left: 82; 
+				padding-right: 107;
+				flex-direction: 'column';
+				justify-content: 'flex-end';
+				align-items: 'flex-start';
+				gap: 59;
+				display: 'inline-flex'
+			}
+
+			#inspiration {
+				align-self: stretch;
+				height: 240px;
+				padding-top: 66px;
+				padding-bottom: 55; 
+				padding-left: 82; 
+				padding-right: 107;
+				background-color: #E2D5BB;
+				flex-direction: 'column';
+				justify-content: 'flex-end';
+				align-items: 'flex-start';
+				gap: 59;
+				display: 'inline-flex'
+			}
+
+			#scope {
+				align-self: stretch;
+				height: 330px;
+				padding-top: 66px;
+				padding-bottom: 55; 
+				padding-left: 82; 
+				padding-right: 107;
+				background-color: #E2C4BB;
+				flex-direction: 'column';
+				justify-content: 'flex-end';
+				align-items: 'flex-start';
+				gap: 59;
+				display: 'inline-flex'
+			}
+
+			#extras {
+				align-self: stretch;
+				height: 240px;
+				padding-top: 66px;
+				padding-bottom: 55; 
+				padding-left: 82; 
+				padding-right: 107;
+				background-color: #E2BBC4;
+				flex-direction: 'column';
+				justify-content: 'flex-end';
+				align-items: 'flex-start';
+				gap: 59;
+				display: 'inline-flex'
+			}
+
+			#wireframes {
+				width: 1512;
+				height: 1811;
+				position: 'relative';
+				background: white;
+				flex-direction: 'column';
+				justify-content: 'flex-start';
+				align-items: 'flex-start';
+				display: 'flex'
+			}
+
+			/* Wireframe image styles */
+			.wireframe_1 {
+			width: 643px;
+			height: 1419px;
+			margin: 10px;
+			}
+
+			.wireframe_2 {
+			width: 621px;
+			height: 451px;
+			margin: 14px;
+			}
+
+			.left_column {
+				width: 643px;
+				float: left;
+				padding-right: 30px;
+				padding-top: 50px;
+				}
+
+			.right_column {
+				width: 621px;
+				float: left;
+				padding-top: 50px;
+			}
+
+			a {
+				padding: 0px;
+				margin: 0px;
+			}
+
+			ul {
+				padding-left: 50px;
+				margin-top: 0px;
+			}
+      </style>
+
+	  
+   </head>
+   <body>
+	<div class="main-container">
+		<div class="header">
+		  <div class="title">REACH</div>
+		  <div class="subtitle">Website Final Project Proposal</div>
+		</div>
+		<div id="topic">
+		  <div class="section-title">Topic</div>
+		  <div class="section-content">Reach is a student organization at USC devoted to serving children experiencing homelessness and providing resources, education, and advocacy.</div>
+		</div>
+		<div id="audience">
+		  <div class="section-title">Audience</div>
+		  <div class="section-content">The intended audience are both students at USC who are interested in joining the organization and members of the organization who want to schedule volunteer sessions in Skid Row.</div>
+		</div>
+		<div id="design">
+		  <div class="section-title">Design and Color Scheme</div>
+		  <div class="section-content">The design will evoke the energy of the children we serve through watercolor and bright colors. Our website should feel wondrous and colorful like a children’s library book.</div>
+		</div>
+		<div id="color-palette">
+		  <div class="section-title">Color Palette</div>
+		  <div class="color" style="background-color: #433E3E;"></div>
+		  <div class="color" style="background-color: #BBE0E2;"></div>
+		  <div class="color" style="background-color: #BBD2E2;"></div>
+		  <div class="color" style="background-color: #BBE2BF;"></div>
+		</div>
+		<div id="inspiration">
+		  <div class="section-title">Website Inspiration</div>
+		  <div class="section-content">
+			<a href="https://www.apple.com">https://www.apple.com</a><br>
+			<a href="https://schoolonwheelsusc.com/homepage">https://schoolonwheelsusc.com/homepage</a><br>
+			<a href="https://schoolonwheels.org">https://schoolonwheels.org</a>
+		  </div>
+		</div>
+		<div id="scope">
+		  <div class="section-title">Scope</div>
+		  <div class="section-content">
+			<a>Sections</a>
+			<ul>
+			  <li>Home/About Page</li>
+			  <li>Schedule Volunteer Session Page</li>
+			  <li>Volunteer Schedule Page</li>
+			  <li>Contact Us Page</li>
+			</ul>
+		  </div>
+		</div>
+		<div id="extras">
+		  <div class="section-title">Extras</div>
+		  <div class="section-content">Ability to make a weekly schedule<br>Ability to see multiple weeks</div>
+		</div>
+		<div id="wireframes">
+		  <div class="section-title">Wireframes</div>
+		  	<div class="left_column">
+				<img class="wireframe_1" src="images/home.png">
+			</div>
+			<div class="right_column">
+				<img class="wireframe_2" src="images/calendar.png">
+				<img class="wireframe_2" src="images/schedule.png">
+				<img class="wireframe_2" src="images/contact.png">
+			</div>
+		</div>
+	  </div>
+   </body>
+</html>
